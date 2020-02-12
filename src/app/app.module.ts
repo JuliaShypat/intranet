@@ -12,6 +12,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -37,7 +39,7 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

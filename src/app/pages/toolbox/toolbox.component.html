@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row pt-4">
+    <div class="col-md-3 col-xs-12">
+      <h2>Niezbędnik</h2>
+    </div>
+    <div class="col-md-9 col-xs-12">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-12 pt-4" *ngFor="let category of categories">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><fa [name]="category.iconUrl"></fa> {{ category.name | uppercase }}</h5>
+              <ul>
+                <li *ngFor="let link of category.links">
+                  <a [href]="link.url" class="card-link">{{ link.name }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

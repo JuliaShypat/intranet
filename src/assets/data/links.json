@@ -1,0 +1,127 @@
+[
+  {
+    "id": "category1",
+    "name": "Fora Dyskusyjne",
+    "iconUrl": "comments",
+    "links": [
+      {
+        "id": "link1",
+        "name": "Forum Budownictwa",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link2",
+        "name": "Forum Instalacji",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link3",
+        "name": "Forum Nieruchomości",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link4",
+        "name": "Forum Nowości",
+        "url": "https://www.predica.pl/"
+      }
+    ]
+  },
+  {
+    "id": "category2",
+    "name": "Zasoby O365",
+    "iconUrl": "folder",
+    "links": [
+      {
+        "id": "link5",
+        "name": "Office Apps",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link6",
+        "name": "One Drive",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link7",
+        "name": "Outlook",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link8",
+        "name": "Share Point",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link9",
+        "name": "Yammer",
+        "url": "https://www.predica.pl/"
+      }
+    ]
+  },
+  {
+    "id": "category3",
+    "name": "Projekty",
+    "iconUrl": "list",
+    "links": [
+      {
+        "id": "link10",
+        "name": "Biura",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link11",
+        "name": "Handel",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link12",
+        "name": "Hotele",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link12",
+        "name": "Kultura i Oświata",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link13",
+        "name": "Mieszkania",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link14",
+        "name": "Przemysł",
+        "url": "https://www.predica.pl/"
+      },
+      {
+        "id": "link15",
+        "name": "Sport",
+        "url": "https://www.predica.pl/"
+      }
+    ]
+  },
+  {
+    "id": "category4",
+    "name": "Spółki",
+    "iconUrl": "briefcase",
+    "links": [
+      {
+        "id": "link16",
+        "name": "Lorem Ipsum",
+        "url": "https://www.predica.pl/"
+      }
+    ]
+  },
+  {
+    "id": "category5",
+    "name": "Ważne",
+    "iconUrl": "bookmark",
+    "links": [
+      {
+        "id": "link17",
+        "name": "Ogłoszenia",
+        "url": "https://www.predica.pl/"
+      }
+    ]
+  }
+]
