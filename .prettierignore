@@ -1,0 +1,9 @@
+.angular.json
+package.json
+README.md
+cypress.json
+package-lock.json
+tsconfig.json
+tslint.json
+yarn.lock
+src/environments/*.*
