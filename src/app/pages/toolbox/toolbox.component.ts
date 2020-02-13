@@ -3,7 +3,6 @@ import { ToolboxService } from './toolbox.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Category } from './_interfaces_/category.interface';
-import { Link } from './_interfaces_/link.interface';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -12,8 +11,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./toolbox.component.css']
 })
 export class ToolboxComponent implements OnInit, OnDestroy {
-  public categories: Array<Category>;
+  public categoriesToDisplay: Array<Category>;
   public searchBox: FormControl;
+  private categories: Array<Category>;
   private unsubscribeAll$: Subject<void> = new Subject();
 
   constructor(private toolboxService: ToolboxService) {}
@@ -28,8 +28,8 @@ export class ToolboxComponent implements OnInit, OnDestroy {
     this.toolboxService
       .getCategoriesList()
       .pipe(takeUntil(this.unsubscribeAll$))
-      .subscribe(data => {
-        this.categories = data;
+      .subscribe((data: Array<Category>) => {
+        this.setCategories(data);
       });
   }
 
@@ -39,34 +39,29 @@ export class ToolboxComponent implements OnInit, OnDestroy {
 
   public listenToSearch(): void {
     this.searchBox.valueChanges.pipe(takeUntil(this.unsubscribeAll$)).subscribe((value: string) => {
-      if (value.length >= 3) {
-        this.filterCategories(value);
-      }
+      value.length >= 3 ? this.filterCategories(value) : this.resetSearch();
     });
   }
 
-  public filterCategories(searchedValue: string): void {
-    const searchedValueLowerCase = searchedValue.toLowerCase();
-    this.categories = this.categories.reduce((filtered, category) => {
-      if (this.isCategoryIncludeSubstring(category, searchedValueLowerCase)) {
-        filtered.push(category);
-      } else {
-        const filteredLinks = this.getLinksIncludeSubstring(category.links, searchedValueLowerCase);
-        if (filteredLinks.length > 0) {
-          filtered.push({ ...category, links: filteredLinks });
-        }
-      }
-      return filtered;
-    }, []);
+  private filterCategories(searchedValue: string): void {
+    this.categoriesToDisplay = this.toolboxService.getFilteredCategories(this.categories, searchedValue.toLowerCase());
   }
 
-  public isCategoryIncludeSubstring(category: Category, substring: string): boolean {
-    return category.name.toLowerCase().includes(substring);
+  public resetSearch(): void {
+    this.categoriesToDisplay = this.getCategories();
   }
 
-  public getLinksIncludeSubstring(links: Array<Link>, substring: string): Array<Link> {
-    const filteredLinks = links.filter(link => link.name.toLowerCase().includes(substring));
-    return filteredLinks;
+  public isCategoryNotEmpty(category: Category): boolean {
+    return category && category.name && category.links.length > 0;
+  }
+
+  private setCategories(data: Array<Category>): void {
+    this.categories = data;
+    this.categoriesToDisplay = data;
+  }
+
+  private getCategories(): Array<Category> {
+    return this.categories;
   }
 
   ngOnDestroy() {

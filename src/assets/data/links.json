@@ -128,5 +128,11 @@
         "url": "https://www.predica.pl/"
       }
     ]
+  },
+  {
+    "id": "category6",
+    "name": "Empty category",
+    "iconUrl": "bookmark",
+    "links": []
   }
 ]
