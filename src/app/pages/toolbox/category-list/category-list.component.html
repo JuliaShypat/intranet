@@ -1,5 +1,5 @@
 <div class="row categories-container">
-  <ng-container *ngIf="categories.length > 0; else nothingFound">
+  <ng-container *ngIf="categories?.length > 0; else nothingFound">
     <ng-container *ngFor="let category of categories">
       <div class="col-lg-4 col-md-6 col-xs-12 pt-4" *ngIf="isCategoryNotEmpty(category)">
         <div class="card h-100">
@@ -18,8 +18,12 @@
 </div>
 
 <ng-template #nothingFound>
-  <div class="col-12">
-    <h2>Sorry, nothing found!</h2>
-    <h5>Try different search criteria or <button type="button" class="btn btn-link">reset the search</button></h5>
+  <div class="col-12 pt-4">
+    <div class="card h-100 w-100">
+      <div class="card-body">
+        <h2 class="card-title">Sorry, nothing found!</h2>
+        <h5 class="card-title">Try different search criteria or <button type="button" class="btn btn-link">reset the search</button></h5>
+      </div>
+    </div>
   </div>
 </ng-template>

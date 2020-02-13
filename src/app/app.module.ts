@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './pages/toolbox/category-list/category-list.component';
+import { SectionsComponent } from './pages/sections/sections.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'departments', component: DepartmentsComponent },
   { path: 'toolbox', component: ToolboxComponent },
   { path: 'annoncements', component: AnnoncementsComponent },
+  { path: 'sections', component: SectionsComponent },
   { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent }
 ];
@@ -40,7 +42,8 @@ const routes: Routes = [
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    SectionsComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule, ReactiveFormsModule],
   providers: [],

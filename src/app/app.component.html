@@ -1,6 +1,10 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<main class="d-flex flex-column">
+  <app-header></app-header>
+  <section class="d-flex flex-column h-100 bg-light">
+    <router-outlet></router-outlet>
+  </section>
+  <app-footer></app-footer>
+</main>
 
 <!-- <style>
   :host {
