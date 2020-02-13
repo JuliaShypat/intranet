@@ -46,27 +46,26 @@ export class ToolboxComponent implements OnInit, OnDestroy {
   }
 
   public filterCategories(searchedValue: string): void {
-    this.categories = this.categories.filter(category => this.checkLinksOrTitleForSubstring(category, searchedValue));
-  }
-
-  public checkLinksOrTitleForSubstring(category: Category, searchedValue: string): Category {
     const searchedValueLowerCase = searchedValue.toLowerCase();
-    let mappedCategory: Category;
-    if (category.name.toLowerCase().includes(searchedValueLowerCase)) {
-      mappedCategory = category;
-    } else {
-      const filteredLinks = this.checkLinksForSubstring(category.links, searchedValueLowerCase);
-      if (filteredLinks.length > 0) {
-        mappedCategory = { ...category, links: filteredLinks };
+    this.categories = this.categories.reduce((filtered, category) => {
+      if (this.isCategoryIncludeSubstring(category, searchedValueLowerCase)) {
+        filtered.push(category);
       } else {
-        mappedCategory = null;
+        const filteredLinks = this.getLinksIncludeSubstring(category.links, searchedValueLowerCase);
+        if (filteredLinks.length > 0) {
+          filtered.push({ ...category, links: filteredLinks });
+        }
       }
-    }
-    return mappedCategory;
+      return filtered;
+    }, []);
   }
 
-  public checkLinksForSubstring(links: Array<Link>, searchedValue: string): Array<Link> {
-    const filteredLinks = links.filter(link => link.name.toLowerCase().includes(searchedValue));
+  public isCategoryIncludeSubstring(category: Category, substring: string): boolean {
+    return category.name.toLowerCase().includes(substring);
+  }
+
+  public getLinksIncludeSubstring(links: Array<Link>, substring: string): Array<Link> {
+    const filteredLinks = links.filter(link => link.name.toLowerCase().includes(substring));
     return filteredLinks;
   }
 
