@@ -1,0 +1,91 @@
+.navbar {
+  height: 80px;
+}
+
+.navbar .nav-item {
+  position: relative;
+}
+
+.navbar .nav-link {
+  text-transform: uppercase;
+}
+
+.navbar .nav-link.color-red:after {
+  background-color: #f3504c;
+}
+
+.navbar .nav-link.color-red.active {
+  color: #f3504c;
+}
+
+.navbar .nav-link.color-blue:after {
+  background-color: #448aff;
+}
+
+.navbar .nav-link.color-blue.active {
+  color: #448aff;
+}
+
+.navbar .nav-link.color-grey:after {
+  background-color: #607d8b;
+}
+
+.navbar .nav-link.color-grey.active {
+  color: #607d8b;
+}
+
+.navbar .nav-link.color-green:after {
+  background-color: #00796b;
+}
+
+.navbar .nav-link.color-green.active {
+  color: #00796b;
+}
+
+.navbar .nav-link.color-orange:after {
+  background-color: #ff9800;
+}
+
+.navbar .nav-link.color-orange.active {
+  color: #ff9800;
+}
+
+.navbar .nav-link.color-purple:after {
+  background-color: #512da8;
+}
+
+.navbar .nav-link.color-purple.active {
+  color: #512da8;
+}
+
+.navbar .nav-link:after {
+  bottom: -6px;
+  height: 2px;
+}
+
+.navbar .nav-link:after {
+  border-radius: 290486px;
+  content: '';
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  width: 100%;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar .nav-link.active:after,
+  .navbar .nav-link:hover:after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}

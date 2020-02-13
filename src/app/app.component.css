@@ -9,9 +9,12 @@
 }
 
 main > .container {
-  padding: 60px 15px 0;
+  padding: 80px 15px 0;
 }
 
 .bg-light {
   background-color: #e6e6e6 !important;
+}
+.bg-dark {
+  background-color: #343656 !important;
 }

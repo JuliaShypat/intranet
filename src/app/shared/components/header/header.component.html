@@ -1,39 +1,43 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/toolbox']">Predica Intranet</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarCollapse"
-        aria-controls="navbarCollapse"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/homepage']" routerLinkActive="active">Homepage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/departments']" routerLinkActive="active">Departments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/toolbox']" routerLinkActive="active">Toolbox</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/announcements']" routerLinkActive="active">Announcements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/sections']" routerLinkActive="active">Sections</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About</a>
-          </li>
-        </ul>
+      <div class="col-md-3 col-sm-12">
+        <a class="navbar-brand" [routerLink]="['/toolbox']">Predica Intranet</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="col-md-9 col-sm-12">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-blue" [routerLink]="['/homepage']" routerLinkActive="active">Homepage</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-grey" [routerLink]="['/departments']" routerLinkActive="active">Departments</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-red" [routerLink]="['/toolbox']" routerLinkActive="active">Toolbox</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-green" [routerLink]="['/announcements']" routerLinkActive="active">Announcements</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-orange" [routerLink]="['/sections']" routerLinkActive="active">Sections</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-purple" [routerLink]="['/about']" routerLinkActive="active">About</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>

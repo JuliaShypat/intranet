@@ -51,6 +51,10 @@ export class ToolboxComponent implements OnInit, OnDestroy {
     this.categoriesToDisplay = this.getCategories();
   }
 
+  public clearField(): void {
+    this.searchField.patchValue('');
+  }
+
   private getCategories(): Array<Category> {
     return this.categories;
   }
@@ -63,5 +67,9 @@ export class ToolboxComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribeAll$.next();
     this.unsubscribeAll$.complete();
+  }
+
+  get searchField(): FormControl {
+    return this.searchBox;
   }
 }

@@ -1,0 +1,8 @@
+/* .categories-container .card ul {
+  list-style: none;
+  padding-left: 0;
+}
+*/
+.categories-container .card ul li:hover fa {
+  display: inline !important;
+}
