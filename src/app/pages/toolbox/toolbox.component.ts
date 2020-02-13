@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-toolbox',
   templateUrl: './toolbox.component.html',
-  styleUrls: ['./toolbox.component.css']
+  styleUrls: ['./toolbox.component.scss']
 })
 export class ToolboxComponent implements OnInit, OnDestroy {
   public categoriesToDisplay: Array<Category>;
