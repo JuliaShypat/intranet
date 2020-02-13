@@ -9,6 +9,11 @@
 .navbar .nav-link {
   text-transform: uppercase;
 }
+.navbar.navbar-light .navbar-toggler {
+  border-color: #ffffff;
+}
+
+/* Coloring of menu */
 
 .navbar .nav-link.color-red:after {
   background-color: #f3504c;
@@ -87,5 +92,11 @@
   .navbar .nav-link:hover:after {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
   }
 }

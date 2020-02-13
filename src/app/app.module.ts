@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './pages/toolbox/category-list/category-list.component';
 import { SectionsComponent } from './pages/sections/sections.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -47,7 +48,7 @@ const routes: Routes = [
     SectionsComponent,
     LoaderComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule, ReactiveFormsModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })
