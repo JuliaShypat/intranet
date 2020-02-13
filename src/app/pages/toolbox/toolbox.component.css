@@ -10,7 +10,7 @@
   flex-shrink: 1;
 }
 
-.categories-search fa {
+.categories-search .input-group-append fa {
   position: absolute;
   right: 8px;
   top: 8px;

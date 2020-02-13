@@ -12,7 +12,13 @@
       </div>
     </div>
     <div class="col-md-9 col-xs-12">
-      <app-category-list [categories]="categoriesToDisplay" (resetFilters)="clearField()"></app-category-list>
+      <ng-container *ngIf="categoriesToDisplay; else loading">
+        <app-category-list [categories]="categoriesToDisplay" (resetFilters)="clearField()"></app-category-list>
+      </ng-container>
     </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

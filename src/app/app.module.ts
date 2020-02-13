@@ -17,6 +17,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './pages/toolbox/category-list/category-list.component';
 import { SectionsComponent } from './pages/sections/sections.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -43,7 +44,8 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     CategoryListComponent,
-    SectionsComponent
+    SectionsComponent,
+    LoaderComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
