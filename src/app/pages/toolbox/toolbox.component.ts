@@ -51,17 +51,13 @@ export class ToolboxComponent implements OnInit, OnDestroy {
     this.categoriesToDisplay = this.getCategories();
   }
 
-  public isCategoryNotEmpty(category: Category): boolean {
-    return category && category.name && category.links.length > 0;
+  private getCategories(): Array<Category> {
+    return this.categories;
   }
 
   private setCategories(data: Array<Category>): void {
     this.categories = data;
     this.categoriesToDisplay = data;
-  }
-
-  private getCategories(): Array<Category> {
-    return this.categories;
   }
 
   ngOnDestroy() {
