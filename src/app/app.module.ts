@@ -12,13 +12,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryListComponent } from './pages/toolbox/category-list/category-list.component';
 import { SectionsComponent } from './pages/sections/sections.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -31,6 +33,10 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent }
 ];
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/translations/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -48,7 +54,22 @@ const routes: Routes = [
     SectionsComponent,
     LoaderComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes), AngularFontAwesomeModule, HttpClientModule, ReactiveFormsModule, NgbModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    TranslateModule.forRoot({
+      defaultLanguage: 'pl',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgbModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
