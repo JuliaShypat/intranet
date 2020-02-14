@@ -9,7 +9,12 @@
         <p>{{ 'FOOTER.COMPANY.NIP' | translate: { value: '5783048378' } }}</p>
       </div>
       <div class="col-md-6 col-sm-12 text-right">
-        <div [innerHTML]="'FOOTER.LEGAL' | translate: { termsUrl: 'www.google.com', conditionsUrl: 'www.facebook.com' }"></div>
+        <div
+          [innerHTML]="
+            'FOOTER.LEGAL'
+              | translate: { termsUrl: 'https://www.predica.pl/privacy-policy/', conditionsUrl: 'https://www.predica.pl/gdpr/' }
+          "
+        ></div>
       </div>
     </div>
     <div class="row">
