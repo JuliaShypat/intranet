@@ -2,16 +2,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        Company Data
+        {{ 'FOOTER.COMPANY.NAME' | translate }}
+        <address>{{ 'FOOTER.COMPANY.ADDRESS' | translate }}</address>
+        <p>{{ 'FOOTER.COMPANY.KRS' | translate: { value: '0000331632' } }}</p>
+        <p>{{ 'FOOTER.COMPANY.REGON' | translate: { value: '280404074' } }}</p>
+        <p>{{ 'FOOTER.COMPANY.NIP' | translate: { value: '5783048378' } }}</p>
       </div>
       <div class="col-md-6 col-sm-12 text-right">
-        Terms and Conditions
+        <div [innerHTML]="'FOOTER.LEGAL' | translate: { termsUrl: 'www.google.com', conditionsUrl: 'www.facebook.com' }"></div>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
         <button type="button" class="btn btn-link text-white" (click)="changeLanguage('pl')">Polski</button>
         <button type="button" class="btn btn-link text-white" (click)="changeLanguage('en')">English</button>
+      </div>
+      <div class="col-12">
+        <p>{{ 'FOOTER.COPYRIGHT' | translate: { year: getCurrentYear() } }} - {{ 'FOOTER.COMPANY.NAME' | translate }}</p>
       </div>
     </div>
   </div>

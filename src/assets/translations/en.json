@@ -1,3 +1,32 @@
 {
-  "HELLO": "hello"
+  "NAVIGATION": {
+    "HOMEPAGE": "Homepage",
+    "DEPARTMENTS": "Departments",
+    "TOOLBOX": "Toolbox",
+    "NEWS": "News",
+    "ANNOUNCEMENTS": "Announcements",
+    "SECTIONS": "Sections",
+    "ABOUT": "About"
+  },
+  "TOOLBOX_PAGE": {
+    "HEADER": "Essentials"
+  },
+  "SEARCH": {
+    "PLACEHOLDER_TOOLBOX": "Search in essentials",
+    "PLACEHOLDER": "Search"
+  },
+  "FOOTER": {
+    "COMPANY": {
+      "NAME": "Company Name",
+      "ADDRESS": "221B Baker Street, London, UK",
+      "KRS": "KRS {{value}}",
+      "REGON": "REGON {{value}}",
+      "NIP": "NIP {{value}}"
+    },
+    "LEGAL": "Using the application you accept the <a href='{{termsUrl}}' class='text-white' target='_blanc'><strong>terms</strong></a> and <a href='{{conditionsUrl}}'  class='text-white' target='_blanc'><strong>conditions of use</strong></a>",
+    "COPYRIGHT": "Copyright © {{year}}"
+  },
+  "LOADER": {
+    "LOADING": "Loading..."
+  }
 }

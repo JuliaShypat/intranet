@@ -1,3 +1,32 @@
 {
-  "HELLO": "Cześć"
+  "NAVIGATION": {
+    "HOMEPAGE": "Strona główna",
+    "DEPARTMENTS": "Departamenty",
+    "TOOLBOX": "Niezbędnik",
+    "NEWS": "Wiadomości",
+    "ANNOUNCEMENTS": "Ogłoszenia",
+    "SECTIONS": "Sekcje",
+    "ABOUT": "O nas"
+  },
+  "TOOLBOX_PAGE": {
+    "HEADER": "Niezbędnik"
+  },
+  "SEARCH": {
+    "PLACEHOLDER_TOOLBOX": "Przeszukaj niezbędnik",
+    "PLACEHOLDER": "Wyszukaj"
+  },
+  "FOOTER": {
+    "COMPANY": {
+      "NAME": "Nazwa Firmy",
+      "ADDRESS": "ul.Baker 221B, Londyn, Wielka Brytania",
+      "KRS": "KRS {{value}}",
+      "REGON": "REGON {{value}}",
+      "NIP": "NIP {{value}}"
+    },
+    "LEGAL": "Używając danej aplikacji zgadzasz się z <a href='{{termsUrl}}' class='text-white' target='_blanc'><strong>warunkami użytkowania</strong></a> oraz <a href='{{conditionsUrl}}'  class='text-white' target='_blanc'><strong>regulaminem</strong></a>",
+    "COPYRIGHT": "Wszelkie prawa zastrzeżone © {{year}}"
+  },
+  "LOADER": {
+    "LOADING": "Dane się ładują..."
+  }
 }

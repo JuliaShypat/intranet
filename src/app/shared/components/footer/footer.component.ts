@@ -16,4 +16,8 @@ export class FooterComponent implements OnInit {
       this.translateService.use(code);
     }
   }
+
+  public getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
 }

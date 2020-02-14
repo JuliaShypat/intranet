@@ -11,9 +11,18 @@
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item m-2">
-              <a class="nav-link p-0 m-0 color-blue" [routerLink]="['/homepage']" (click)="isMenuCollapsed = true" routerLinkActive="active"
-                >Homepage</a
+              <a
+                class="nav-link p-0 m-0 color-blue"
+                [routerLink]="['/homepage']"
+                (click)="isMenuCollapsed = true"
+                routerLinkActive="active"
+                >{{ 'NAVIGATION.HOMEPAGE' | translate }}</a
               >
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link p-0 m-0 color-pink" [routerLink]="['/news']" (click)="isMenuCollapsed = true" routerLinkActive="active">{{
+                'NAVIGATION.NEWS' | translate
+              }}</a>
             </li>
             <li class="nav-item m-2">
               <a
@@ -21,12 +30,16 @@
                 [routerLink]="['/departments']"
                 (click)="isMenuCollapsed = true"
                 routerLinkActive="active"
-                >Departments</a
+                >{{ 'NAVIGATION.DEPARTMENTS' | translate }}</a
               >
             </li>
             <li class="nav-item m-2">
-              <a class="nav-link p-0 m-0 color-red" [routerLink]="['/toolbox']" (click)="isMenuCollapsed = true" routerLinkActive="active"
-                >Toolbox</a
+              <a
+                class="nav-link p-0 m-0 color-red"
+                [routerLink]="['/toolbox']"
+                (click)="isMenuCollapsed = true"
+                routerLinkActive="active"
+                >{{ 'NAVIGATION.TOOLBOX' | translate }}</a
               >
             </li>
             <li class="nav-item m-2">
@@ -35,7 +48,7 @@
                 [routerLink]="['/announcements']"
                 (click)="isMenuCollapsed = true"
                 routerLinkActive="active"
-                >Announcements</a
+                >{{ 'NAVIGATION.ANNOUNCEMENTS' | translate }}</a
               >
             </li>
             <li class="nav-item m-2">
@@ -44,12 +57,16 @@
                 [routerLink]="['/sections']"
                 (click)="isMenuCollapsed = true"
                 routerLinkActive="active"
-                >Sections</a
+                >{{ 'NAVIGATION.SECTIONS' | translate }}</a
               >
             </li>
             <li class="nav-item m-2">
-              <a class="nav-link p-0 m-0 color-purple" [routerLink]="['/about']" (click)="isMenuCollapsed = true" routerLinkActive="active"
-                >About</a
+              <a
+                class="nav-link p-0 m-0 color-purple"
+                [routerLink]="['/about']"
+                (click)="isMenuCollapsed = true"
+                routerLinkActive="active"
+                >{{ 'NAVIGATION.ABOUT' | translate }}</a
               >
             </li>
           </ul>

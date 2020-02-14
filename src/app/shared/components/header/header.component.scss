@@ -20,6 +20,15 @@
       background-color: $header-red;
     }
 
+    &.color-pink {
+      &.active {
+        color: $header-pink;
+      }
+    }
+    &.color-pink:after {
+      background-color: $header-pink;
+    }
+
     &.color-blue {
       &.active {
         color: $header-blue;
