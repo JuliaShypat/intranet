@@ -1,18 +1,10 @@
-.categories-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-}
-
-.categories-container .card {
-  order: 0;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
-
-.categories-search .input-group-append fa {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  z-index: 5;
+.categories-search {
+  & .input-group-append {
+    & fa {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      z-index: 5;
+    }
+  }
 }

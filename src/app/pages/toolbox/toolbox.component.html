@@ -4,7 +4,14 @@
       <h2 class="pt-4">{{ 'HELLO' | translate }}</h2>
 
       <div class="input-group mb-3 categories-search">
-        <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="search" #search [formControl]="searchBox" />
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Search"
+          placeholder="Search"
+          autocomplete="new-password"
+          [formControl]="searchBox"
+        />
         <div class="input-group-append">
           <fa name="times text-muted" *ngIf="searchField.value.length >= 3" (click)="clearField()"></fa>
           <fa name="search text-primary" *ngIf="searchField.value.length < 3"></fa>

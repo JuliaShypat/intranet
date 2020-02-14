@@ -9,7 +9,7 @@
             </h5>
             <ul class="list-group list-group-flush">
               <li *ngFor="let link of category.links" class="list-group-item list-group-item-action">
-                <a [href]="link.url" class="card-link text-secondary" target="_blanc"
+                <a [href]="link.url" class="card-link w-100 d-block text-secondary" target="_blanc"
                   >{{ link.name }} <fa name="chevron-right" class="pull-right text-muted d-none"></fa>
                 </a>
               </li>

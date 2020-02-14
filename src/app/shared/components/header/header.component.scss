@@ -1,102 +1,100 @@
+@import '../../styles/variables.scss';
+
 .navbar {
   height: 80px;
-}
+  border-bottom: 1px solid $border-grey;
 
-.navbar .nav-item {
-  position: relative;
-}
-
-.navbar .nav-link {
-  text-transform: uppercase;
-}
-.navbar.navbar-light .navbar-toggler {
-  border-color: #ffffff;
-}
-
-/* Coloring of menu */
-
-.navbar .nav-link.color-red:after {
-  background-color: #f3504c;
-}
-
-.navbar .nav-link.color-red.active {
-  color: #f3504c;
-}
-
-.navbar .nav-link.color-blue:after {
-  background-color: #448aff;
-}
-
-.navbar .nav-link.color-blue.active {
-  color: #448aff;
-}
-
-.navbar .nav-link.color-grey:after {
-  background-color: #607d8b;
-}
-
-.navbar .nav-link.color-grey.active {
-  color: #607d8b;
-}
-
-.navbar .nav-link.color-green:after {
-  background-color: #00796b;
-}
-
-.navbar .nav-link.color-green.active {
-  color: #00796b;
-}
-
-.navbar .nav-link.color-orange:after {
-  background-color: #ff9800;
-}
-
-.navbar .nav-link.color-orange.active {
-  color: #ff9800;
-}
-
-.navbar .nav-link.color-purple:after {
-  background-color: #512da8;
-}
-
-.navbar .nav-link.color-purple.active {
-  color: #512da8;
-}
-
-.navbar .nav-link:after {
-  bottom: -6px;
-  height: 2px;
-}
-
-.navbar .nav-link:after {
-  border-radius: 290486px;
-  content: '';
-  display: inline-block;
-  left: 0;
-  position: absolute;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  width: 100%;
-}
-
-@media screen and (min-width: 1088px) {
-  .navbar .nav-link.active:after,
-  .navbar .nav-link:hover:after {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+  .nav-item {
+    position: relative;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .navbar {
+  .nav-link {
+    text-transform: uppercase;
+
+    &.color-red {
+      &.active {
+        color: $header-red;
+      }
+    }
+    &.color-red:after {
+      background-color: $header-red;
+    }
+
+    &.color-blue {
+      &.active {
+        color: $header-blue;
+      }
+    }
+    &.color-blue:after {
+      background-color: $header-blue;
+    }
+
+    &.color-grey {
+      &.active {
+        color: $header-grey;
+      }
+    }
+    &.color-grey:after {
+      background-color: $header-grey;
+    }
+
+    &.color-green {
+      &.active {
+        color: $header-green;
+      }
+    }
+    &.color-green:after {
+      background-color: $header-green;
+    }
+    &.color-orange {
+      &.active {
+        color: $header-orange;
+      }
+    }
+    &.color-orange:after {
+      background-color: $header-orange;
+    }
+    &.color-purple {
+      &.active {
+        color: $header-purple;
+      }
+    }
+    &.color-purple:after {
+      background-color: $header-purple;
+    }
+  }
+  .nav-link:after {
+    bottom: -6px;
+    height: 2px;
+    border-radius: 290486px;
+    content: '';
+    display: inline-block;
+    left: 0;
+    position: absolute;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    width: 100%;
+  }
+  &.navbar-light .navbar-toggler {
+    border-color: $white;
+  }
+  @media only screen and (max-width: 768px) {
     height: auto;
+  }
+
+  @media screen and (min-width: 992px) {
+    .nav-link.active:after,
+    .nav-link:hover:after {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
   }
 }
