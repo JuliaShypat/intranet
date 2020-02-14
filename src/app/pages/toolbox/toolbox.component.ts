@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ToolboxService } from './toolbox.service';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, concatMap } from 'rxjs/operators';
 import { Category } from './_interfaces_/category.interface';
 import { FormControl } from '@angular/forms';
 
@@ -20,6 +20,7 @@ export class ToolboxComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getPageData();
+    this.updateDataOnLangChange();
     this.createSearchForm();
     this.listenToSearch();
   }
@@ -27,6 +28,15 @@ export class ToolboxComponent implements OnInit, OnDestroy {
   public getPageData(): void {
     this.toolboxService
       .getCategoriesList()
+      .pipe(takeUntil(this.unsubscribeAll$))
+      .subscribe((data: Array<Category>) => {
+        this.setCategories(data);
+      });
+  }
+
+  public updateDataOnLangChange(): void {
+    this.toolboxService
+      .getTranslatedPageData()
       .pipe(takeUntil(this.unsubscribeAll$))
       .subscribe((data: Array<Category>) => {
         this.setCategories(data);
