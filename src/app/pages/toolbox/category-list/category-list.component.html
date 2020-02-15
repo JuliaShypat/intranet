@@ -25,11 +25,13 @@
   <div class="col-12 pt-4">
     <div class="card h-100 w-100">
       <div class="card-body text-center">
-        <h2 class="card-title">Sorry, nothing found!</h2>
+        <h2 class="card-title">{{ 'TOOLBOX_PAGE.NOT_FOUND.NOTHING_FOUND' | translate }}</h2>
         <h5 class="card-title">
-          Try different search criteria
+          {{ 'TOOLBOX_PAGE.NOT_FOUND.TRY_OTHER_CRITERIA' | translate }}
         </h5>
-        <button type="button" class="btn btn-outline-primary" (click)="resetSearchCriteria()">Reset the search</button>
+        <button type="button" class="btn btn-outline-primary" (click)="resetSearchCriteria()">
+          {{ 'TOOLBOX_PAGE.NOT_FOUND.RESET_SEARCH_BTN' | translate }}
+        </button>
       </div>
     </div>
   </div>

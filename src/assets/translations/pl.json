@@ -9,7 +9,12 @@
     "ABOUT": "O nas"
   },
   "TOOLBOX_PAGE": {
-    "HEADER": "Niezbędnik"
+    "HEADER": "Niezbędnik",
+    "NOT_FOUND": {
+      "NOTHING_FOUND": "Przepraszamy, nic nie znaleziono!",
+      "TRY_OTHER_CRITERIA": "Spróbuj wyszukać inne hasło",
+      "RESET_SEARCH_BTN": "Resetuj wyszukiwanie"
+    }
   },
   "SEARCH": {
     "PLACEHOLDER_TOOLBOX": "Przeszukaj niezbędnik",

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -11,7 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, RouterOutlet } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +21,9 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ConfigService } from './core/services/config.service';
+import { configurationServiceInitializerFactory } from './core/factories/configuration-initializer.factory';
+import { HttpLoaderFactory } from './core/factories/translations-loader.factory';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -33,10 +36,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent }
 ];
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/translations/', '.json');
-}
 
 @NgModule({
   declarations: [
@@ -70,7 +69,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    RouterOutlet,
+    ConfigService,
+    { provide: APP_INITIALIZER, useFactory: configurationServiceInitializerFactory, deps: [ConfigService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

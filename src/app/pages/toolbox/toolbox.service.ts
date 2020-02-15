@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Category } from './_interfaces_/category.interface';
 import { Link } from './_interfaces_/link.interface';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { concatMap } from 'rxjs/operators';
+import { concatMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,10 @@ export class ToolboxService {
   }
 
   public getTranslatedPageData(): Observable<Array<Category>> {
-    return this.translateService.onLangChange.pipe(concatMap((event: LangChangeEvent) => this.getCategoriesList(event.lang)));
+    return this.translateService.onLangChange.pipe(
+      tap(event => console.log(event)),
+      concatMap((event: LangChangeEvent) => this.getCategoriesList(event.lang))
+    );
   }
 
   public getFilteredCategories(categories: Array<Category>, substring: string): Array<Category> {

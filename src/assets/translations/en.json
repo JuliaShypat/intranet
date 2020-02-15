@@ -9,7 +9,12 @@
     "ABOUT": "About"
   },
   "TOOLBOX_PAGE": {
-    "HEADER": "Essentials"
+    "HEADER": "Essentials",
+    "NOT_FOUND": {
+      "NOTHING_FOUND": "Sorry, nothing found!",
+      "TRY_OTHER_CRITERIA": "Try different search criteria",
+      "RESET_SEARCH_BTN": "Reset the search"
+    }
   },
   "SEARCH": {
     "PLACEHOLDER_TOOLBOX": "Search in essentials",
