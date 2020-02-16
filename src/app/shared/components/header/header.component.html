@@ -1,15 +1,22 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-      <div class="col-lg-2 col-md-12">
+      <div class="col-lg-2 col-md-8 order-lg-1 order-md-1" [ngClass]="isSearchCollapsed ? 'col-md-12' : 'col-md-8'">
         <a class="navbar-brand" [routerLink]="['/']">
           <img [src]="logoUrl" />
         </a>
         <button class="navbar-toggler pull-right" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <button
+          class="d-inline-block d-lg-none navbar-toggler pull-right my-1"
+          type="button"
+          (click)="isSearchCollapsed = !isSearchCollapsed"
+        >
+          <fa name="search" size="lg"></fa>
+        </button>
       </div>
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-8 col-md-12 order-lg-2 order-md-3">
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item m-2" *ngFor="let link of navLinks">
@@ -24,8 +31,10 @@
           </ul>
         </div>
       </div>
-      <div class="col-lg-2 col-md-12">
-        <app-search [placeholder]="'SEARCH.PLACEHOLDER' | translate" formClasses="form-inline my-2 my-lg-0"></app-search>
+      <div class="col-lg-2 order-lg-3 order-md-2" [ngClass]="{ 'col-md-4': !isSearchCollapsed }">
+        <div [ngbCollapse]="isSearchCollapsed" class="collapse navbar-collapse">
+          <app-search [placeholder]="'SEARCH.PLACEHOLDER' | translate"></app-search>
+        </div>
       </div>
     </div>
   </nav>

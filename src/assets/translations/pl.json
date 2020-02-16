@@ -37,5 +37,10 @@
   },
   "LOADER": {
     "LOADING": "Dane się ładują..."
+  },
+  "NOT_FOUND": {
+    "HEADER": "Przepraszamy, ta strona jeszcze nie jest gotowa!",
+    "INFO_TEXT": "Ale możesz już używać inne działające funkcjonalności!",
+    "LINK": "Sprawdź niezbędnik"
   }
 }

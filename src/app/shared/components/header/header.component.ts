@@ -8,6 +8,7 @@ import { ConfigService } from 'src/app/core/services/config.service';
 })
 export class HeaderComponent implements OnInit {
   public isMenuCollapsed = true;
+  public isSearchCollapsed = true;
   public navLinks: Array<string>;
   public logoUrl: string;
 

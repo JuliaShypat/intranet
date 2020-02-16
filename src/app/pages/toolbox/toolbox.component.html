@@ -1,6 +1,6 @@
 <div class="container min-vh-100">
   <div class="row py-5 mt-5">
-    <div class="col-md-3 col-xs-12">
+    <div class="col-lg-3 col-xs-12">
       <h2 class="pt-4 text-uppercase text-primary">{{ 'TOOLBOX_PAGE.HEADER' | translate }}</h2>
       <div class="categories-search">
         <app-search
@@ -10,7 +10,7 @@
         ></app-search>
       </div>
     </div>
-    <div class="col-md-9 col-xs-12">
+    <div class="col-lg-9 col-xs-12">
       <ng-container *ngIf="categoriesToDisplay; else loading">
         <app-category-list [categories]="categoriesToDisplay" (resetFilters)="resetSearch()"></app-category-list>
       </ng-container>

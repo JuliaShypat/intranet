@@ -37,5 +37,10 @@
   },
   "LOADER": {
     "LOADING": "Loading..."
+  },
+  "NOT_FOUND": {
+    "HEADER": "Sorry, this page is not ready yet!",
+    "INFO_TEXT": "For now you can enjoy functionality, which is already working!",
+    "LINK": "Check out toolbox"
   }
 }
