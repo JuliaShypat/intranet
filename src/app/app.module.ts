@@ -24,6 +24,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConfigService } from './core/services/config.service';
 import { configurationServiceInitializerFactory } from './core/factories/configuration-initializer.factory';
 import { HttpLoaderFactory } from './core/factories/translations-loader.factory';
+import { SearchComponent } from './shared/components/search/search.component';
+import { CategoryComponent } from './pages/toolbox/category-list/category/category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/toolbox', pathMatch: 'full' },
@@ -51,7 +53,9 @@ const routes: Routes = [
     FooterComponent,
     CategoryListComponent,
     SectionsComponent,
-    LoaderComponent
+    LoaderComponent,
+    SearchComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

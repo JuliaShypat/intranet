@@ -1,0 +1,9 @@
+.card {
+  order: 0;
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  ul li:hover fa {
+    display: inline !important;
+  }
+}

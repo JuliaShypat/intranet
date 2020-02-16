@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ToolboxService } from './toolbox.service';
 import { Subject } from 'rxjs';
 import { takeUntil, concatMap, take } from 'rxjs/operators';
 import { Category } from './_interfaces_/category.interface';
 import { FormControl } from '@angular/forms';
+import { SearchComponent } from 'src/app/shared/components/search/search.component';
+import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({
   selector: 'app-toolbox',
@@ -12,16 +14,13 @@ import { FormControl } from '@angular/forms';
 })
 export class ToolboxComponent implements OnInit, OnDestroy {
   public categoriesToDisplay: Array<Category>;
-  public searchBox: FormControl;
   private categories: Array<Category>;
   private unsubscribeAll$: Subject<void> = new Subject();
 
-  constructor(private toolboxService: ToolboxService) {}
+  constructor(private toolboxService: ToolboxService, private configService: ConfigService) {}
 
   ngOnInit() {
     this.getPageData();
-    this.createSearchForm();
-    this.listenToSearch();
   }
 
   public getPageData(): void {
@@ -43,14 +42,10 @@ export class ToolboxComponent implements OnInit, OnDestroy {
       });
   }
 
-  public createSearchForm(): void {
-    this.searchBox = new FormControl('');
-  }
-
-  public listenToSearch(): void {
-    this.searchBox.valueChanges.pipe(takeUntil(this.unsubscribeAll$)).subscribe((value: string) => {
-      value.length >= 3 ? this.filterCategories(value) : this.resetSearch();
-    });
+  public searchInCategories(text: string): void {
+    text.length >= this.configService.getProperty<number>('NUMBER_OF_SYMBOLS_TO_START_SEARCH')
+      ? this.filterCategories(text)
+      : this.resetSearch();
   }
 
   private filterCategories(searchedValue: string): void {
@@ -59,10 +54,6 @@ export class ToolboxComponent implements OnInit, OnDestroy {
 
   public resetSearch(): void {
     this.categoriesToDisplay = this.getCategories();
-  }
-
-  public clearField(): void {
-    this.searchField.patchValue('');
   }
 
   private getCategories(): Array<Category> {
@@ -77,9 +68,5 @@ export class ToolboxComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribeAll$.next();
     this.unsubscribeAll$.complete();
-  }
-
-  get searchField(): FormControl {
-    return this.searchBox;
   }
 }

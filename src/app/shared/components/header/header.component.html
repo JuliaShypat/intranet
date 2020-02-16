@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-      <div class="col-lg-3 col-md-12">
+      <div class="col-lg-2 col-md-12">
         <a class="navbar-brand" [routerLink]="['/']">
           <img [src]="logoUrl" />
         </a>
@@ -9,7 +9,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="col-lg-9 col-md-12">
+      <div class="col-lg-8 col-md-12">
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item m-2" *ngFor="let link of navLinks">
@@ -23,6 +23,9 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div class="col-lg-2 col-md-12">
+        <app-search [placeholder]="'SEARCH.PLACEHOLDER' | translate" formClasses="form-inline my-2 my-lg-0"></app-search>
       </div>
     </div>
   </nav>

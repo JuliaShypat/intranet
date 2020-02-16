@@ -1,0 +1,16 @@
+<form [ngClass]="formClasses" [formGroup]="searchForm">
+  <div class="input-group mb-3 categories-search">
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Search"
+      [placeholder]="placeholder"
+      autocomplete="new-password"
+      formControlName="searchBox"
+    />
+    <div class="input-group-append">
+      <fa name="times text-muted" *ngIf="isSearchCanBeCleared()" (click)="clearField()"></fa>
+      <fa name="search text-primary" *ngIf="!isSearchCanBeCleared()"></fa>
+    </div>
+  </div>
+</form>

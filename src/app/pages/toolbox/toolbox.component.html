@@ -2,25 +2,17 @@
   <div class="row py-5 mt-5">
     <div class="col-md-3 col-xs-12">
       <h2 class="pt-4 text-uppercase text-primary">{{ 'TOOLBOX_PAGE.HEADER' | translate }}</h2>
-
-      <div class="input-group mb-3 categories-search">
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Search"
+      <div class="categories-search">
+        <app-search
+          formClasses="w-100"
           [placeholder]="'SEARCH.PLACEHOLDER_TOOLBOX' | translate"
-          autocomplete="new-password"
-          [formControl]="searchBox"
-        />
-        <div class="input-group-append">
-          <fa name="times text-muted" *ngIf="searchField.value.length >= 3" (click)="clearField()"></fa>
-          <fa name="search text-primary" *ngIf="searchField.value.length < 3"></fa>
-        </div>
+          (valueChange)="searchInCategories($event)"
+        ></app-search>
       </div>
     </div>
     <div class="col-md-9 col-xs-12">
       <ng-container *ngIf="categoriesToDisplay; else loading">
-        <app-category-list [categories]="categoriesToDisplay" (resetFilters)="clearField()"></app-category-list>
+        <app-category-list [categories]="categoriesToDisplay" (resetFilters)="resetSearch()"></app-category-list>
       </ng-container>
     </div>
   </div>

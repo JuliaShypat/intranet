@@ -20,6 +20,12 @@
       background-color: $header-red;
     }
   }
+
+  .navbar-brand {
+    & img {
+      width: 120px;
+    }
+  }
   .nav-link:after {
     bottom: -6px;
     height: 2px;

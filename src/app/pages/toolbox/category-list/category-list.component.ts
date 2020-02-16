@@ -11,11 +11,11 @@ export class CategoryListComponent {
   @Output() resetFilters: EventEmitter<void> = new EventEmitter<void>();
   constructor() {}
 
-  public isCategoryNotEmpty(category: Category): boolean {
-    return category && category.name && category.links.length > 0;
-  }
-
   public resetSearchCriteria(): void {
     this.resetFilters.emit();
+  }
+
+  public isCategoryNotEmpty(category: Category): boolean {
+    return category && category.name && category.links.length > 0;
   }
 }
