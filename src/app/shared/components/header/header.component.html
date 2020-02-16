@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
       <div class="col-lg-3 col-md-12">
-        <a class="navbar-brand" [routerLink]="['/toolbox']">
-          <img src="assets/img/brand.svg" />
+        <a class="navbar-brand" [routerLink]="['/']">
+          <img [src]="logoUrl" />
         </a>
         <button class="navbar-toggler pull-right" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
           <span class="navbar-toggler-icon"></span>
@@ -12,63 +12,13 @@
       <div class="col-lg-9 col-md-12">
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item m-2">
-              <a
-                class="nav-link p-0 m-0 color-blue"
-                [routerLink]="['/homepage']"
-                (click)="isMenuCollapsed = true"
-                routerLinkActive="active"
-                >{{ 'NAVIGATION.HOMEPAGE' | translate }}</a
-              >
-            </li>
-            <li class="nav-item m-2">
-              <a class="nav-link p-0 m-0 color-pink" [routerLink]="['/news']" (click)="isMenuCollapsed = true" routerLinkActive="active">{{
-                'NAVIGATION.NEWS' | translate
-              }}</a>
-            </li>
-            <li class="nav-item m-2">
-              <a
-                class="nav-link p-0 m-0 color-grey"
-                [routerLink]="['/departments']"
-                (click)="isMenuCollapsed = true"
-                routerLinkActive="active"
-                >{{ 'NAVIGATION.DEPARTMENTS' | translate }}</a
-              >
-            </li>
-            <li class="nav-item m-2">
+            <li class="nav-item m-2" *ngFor="let link of navLinks">
               <a
                 class="nav-link p-0 m-0 color-red"
-                [routerLink]="['/toolbox']"
+                [routerLink]="['/' + link]"
                 (click)="isMenuCollapsed = true"
                 routerLinkActive="active"
-                >{{ 'NAVIGATION.TOOLBOX' | translate }}</a
-              >
-            </li>
-            <li class="nav-item m-2">
-              <a
-                class="nav-link p-0 m-0 color-green"
-                [routerLink]="['/announcements']"
-                (click)="isMenuCollapsed = true"
-                routerLinkActive="active"
-                >{{ 'NAVIGATION.ANNOUNCEMENTS' | translate }}</a
-              >
-            </li>
-            <li class="nav-item m-2">
-              <a
-                class="nav-link p-0 m-0 color-orange"
-                [routerLink]="['/sections']"
-                (click)="isMenuCollapsed = true"
-                routerLinkActive="active"
-                >{{ 'NAVIGATION.SECTIONS' | translate }}</a
-              >
-            </li>
-            <li class="nav-item m-2">
-              <a
-                class="nav-link p-0 m-0 color-purple"
-                [routerLink]="['/about']"
-                (click)="isMenuCollapsed = true"
-                routerLinkActive="active"
-                >{{ 'NAVIGATION.ABOUT' | translate }}</a
+                >{{ 'NAVIGATION.' + link.toUpperCase() | translate }}</a
               >
             </li>
           </ul>

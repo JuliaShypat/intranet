@@ -22,14 +22,18 @@
   },
   "FOOTER": {
     "COMPANY": {
-      "NAME": "Nazwa Firmy",
-      "ADDRESS": "ul.Baker 221B, Londyn, Wielka Brytania",
+      "NAME": "PREDICA SP Z O O ",
+      "ADDRESS": "ul.Altowa 2, Warszawa, Polska",
       "KRS": "KRS {{value}}",
       "REGON": "REGON {{value}}",
       "NIP": "NIP {{value}}"
     },
     "LEGAL": "Używając danej aplikacji zgadzasz się z <a href='{{termsUrl}}' class='text-white' target='_blanc'><strong>warunkami użytkowania</strong></a> oraz <a href='{{conditionsUrl}}'  class='text-white' target='_blanc'><strong>regulaminem</strong></a>",
-    "COPYRIGHT": "Wszelkie prawa zastrzeżone © {{year}}"
+    "COPYRIGHT": "Wszelkie prawa zastrzeżone © {{year}}",
+    "LANGUAGE": {
+      "pl": "Polski",
+      "en": "English"
+    }
   },
   "LOADER": {
     "LOADING": "Dane się ładują..."

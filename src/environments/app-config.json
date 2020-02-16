@@ -1,7 +1,8 @@
 {
-    "TITLE": "Intranet for Predica",
     "LANGUAGES": ["pl", "en"],
     "DEFAULT_LANGUAGE": "pl",
-    "HEADER_NAV": ["homepage", "news", "departments", "toolbox", "annoncements", "sections", "about"],
-    "NUMBER_OF_SYMBOLS_TO_START_SEARCH": 3
+    "HEADER_NAV": ["homepage", "news", "departments", "toolbox", "announcements", "sections", "about"],
+    "NUMBER_OF_SYMBOLS_TO_START_SEARCH": 3,
+    "LOGO": "brand.svg",
+    "LOGO_INVERTED": "brandWhite.svg"
 }

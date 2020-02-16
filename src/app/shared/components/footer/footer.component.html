@@ -2,27 +2,37 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
+        <img [src]="logoUrl" />
+        <br />
         {{ 'FOOTER.COMPANY.NAME' | translate }}
         <address>{{ 'FOOTER.COMPANY.ADDRESS' | translate }}</address>
-        <p>{{ 'FOOTER.COMPANY.KRS' | translate: { value: '0000331632' } }}</p>
-        <p>{{ 'FOOTER.COMPANY.REGON' | translate: { value: '280404074' } }}</p>
-        <p>{{ 'FOOTER.COMPANY.NIP' | translate: { value: '5783048378' } }}</p>
+        <p>
+          {{ 'FOOTER.COMPANY.KRS' | translate: { value: '0000331632' } }}<br />
+          {{ 'FOOTER.COMPANY.REGON' | translate: { value: '280404074' } }}<br />
+          {{ 'FOOTER.COMPANY.NIP' | translate: { value: '5783048378' } }}
+        </p>
       </div>
       <div class="col-md-6 col-sm-12 text-right">
         <div
           [innerHTML]="
             'FOOTER.LEGAL'
-              | translate: { termsUrl: 'https://www.predica.pl/privacy-policy/', conditionsUrl: 'https://www.predica.pl/gdpr/' }
+              | translate
+                : {
+                    termsUrl: 'https://www.predica.pl/privacy-policy/',
+                    conditionsUrl: 'https://www.predica.pl/gdpr/'
+                  }
           "
         ></div>
+        <ng-container *ngFor="let language of languages; let last = last">
+          <button type="button" class="btn btn-link text-white px-0" (click)="changeLanguage(language)">
+            {{ 'FOOTER.LANGUAGE.' + language | translate }}
+          </button>
+          <span *ngIf="!last" class="px-1">•</span>
+        </ng-container>
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
-        <button type="button" class="btn btn-link text-white" (click)="changeLanguage('pl')">Polski</button>
-        <button type="button" class="btn btn-link text-white" (click)="changeLanguage('en')">English</button>
-      </div>
-      <div class="col-12">
+      <div class="col-12 text-center">
         <p>{{ 'FOOTER.COPYRIGHT' | translate: { year: getCurrentYear() } }} - {{ 'FOOTER.COMPANY.NAME' | translate }}</p>
       </div>
     </div>

@@ -19,58 +19,6 @@
     &.color-red:after {
       background-color: $header-red;
     }
-
-    &.color-pink {
-      &.active {
-        color: $header-pink;
-      }
-    }
-    &.color-pink:after {
-      background-color: $header-pink;
-    }
-
-    &.color-blue {
-      &.active {
-        color: $header-blue;
-      }
-    }
-    &.color-blue:after {
-      background-color: $header-blue;
-    }
-
-    &.color-grey {
-      &.active {
-        color: $header-grey;
-      }
-    }
-    &.color-grey:after {
-      background-color: $header-grey;
-    }
-
-    &.color-green {
-      &.active {
-        color: $header-green;
-      }
-    }
-    &.color-green:after {
-      background-color: $header-green;
-    }
-    &.color-orange {
-      &.active {
-        color: $header-orange;
-      }
-    }
-    &.color-orange:after {
-      background-color: $header-orange;
-    }
-    &.color-purple {
-      &.active {
-        color: $header-purple;
-      }
-    }
-    &.color-purple:after {
-      background-color: $header-purple;
-    }
   }
   .nav-link:after {
     bottom: -6px;

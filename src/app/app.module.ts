@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'departments', component: DepartmentsComponent },
   { path: 'toolbox', component: ToolboxComponent },
-  { path: 'annoncements', component: AnnoncementsComponent },
+  { path: 'announcements', component: AnnoncementsComponent },
   { path: 'sections', component: SectionsComponent },
   { path: 'about', component: AboutComponent },
   { path: '**', component: NotFoundComponent }
