@@ -1,5 +1,9 @@
 {
   "name": "predica-intranet",
+  "author": {
+    "name": "Yuliia Shypat",
+    "email": "juliashipat@gmail.com"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
