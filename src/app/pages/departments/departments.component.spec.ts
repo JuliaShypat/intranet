@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DepartmentsComponent } from './departments.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DepartmentsComponent', () => {
   let component: DepartmentsComponent;
@@ -8,9 +10,10 @@ describe('DepartmentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DepartmentsComponent ]
-    })
-    .compileComponents();
+      declarations: [DepartmentsComponent],
+      imports: [TranslateModule.forRoot()],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

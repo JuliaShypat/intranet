@@ -1,10 +1,8 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ToolboxService } from './toolbox.service';
 import { Subject } from 'rxjs';
-import { takeUntil, concatMap, take } from 'rxjs/operators';
+import { takeUntil, take } from 'rxjs/operators';
 import { Category } from './_interfaces_/category.interface';
-import { FormControl } from '@angular/forms';
-import { SearchComponent } from 'src/app/shared/components/search/search.component';
 import { ConfigService } from 'src/app/core/services/config.service';
 
 @Component({

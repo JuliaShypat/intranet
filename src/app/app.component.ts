@@ -8,8 +8,6 @@ import { ConfigService } from './core/services/config.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'predica-intranet';
-
   constructor(translateService: TranslateService, configService: ConfigService) {
     const lang = configService.getProperty<string>('DEFAULT_LANGUAGE');
     translateService.setDefaultLang(lang ? lang : 'pl');
