@@ -20,7 +20,6 @@ import { SectionsComponent } from './pages/sections/sections.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConfigService } from './core/services/config.service';
 import { configurationServiceInitializerFactory } from './core/factories/configuration-initializer.factory';
 import { HttpLoaderFactory } from './core/factories/translations-loader.factory';
@@ -61,7 +60,6 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     TranslateModule.forRoot({
-      defaultLanguage: 'pl',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ConfigService } from './core/services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   public title = 'predica-intranet';
 
-  constructor(translate: TranslateService) {
-    translate.setDefaultLang('pl');
-    translate.use('pl');
+  constructor(translateService: TranslateService, configService: ConfigService) {
+    const lang = configService.getProperty<string>('DEFAULT_LANGUAGE');
+    translateService.setDefaultLang(lang ? lang : 'pl');
+    translateService.use(lang ? lang : 'pl');
   }
 }

@@ -11,8 +11,8 @@
       </div>
     </div>
     <div class="col-lg-9 col-xs-12">
-      <ng-container *ngIf="categoriesToDisplay; else loading">
-        <app-category-list [categories]="categoriesToDisplay" (resetFilters)="resetSearch()"></app-category-list>
+      <ng-container *ngIf="filteredCategories; else loading">
+        <app-category-list [categories]="filteredCategories" (resetFilters)="resetSearch()"></app-category-list>
       </ng-container>
     </div>
   </div>

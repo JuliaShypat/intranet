@@ -13,8 +13,8 @@ import { ConfigService } from 'src/app/core/services/config.service';
   styleUrls: ['./toolbox.component.scss']
 })
 export class ToolboxComponent implements OnInit, OnDestroy {
-  public categoriesToDisplay: Array<Category>;
-  private categories: Array<Category>;
+  public filteredCategories: Array<Category>;
+  private allCategories: Array<Category>;
   private unsubscribeAll$: Subject<void> = new Subject();
 
   constructor(private toolboxService: ToolboxService, private configService: ConfigService) {}
@@ -29,6 +29,7 @@ export class ToolboxComponent implements OnInit, OnDestroy {
       .pipe(take(1))
       .subscribe((data: Array<Category>) => {
         this.setCategories(data);
+        // Listen to language change only after initial get of data
         this.listenForLangChange();
       });
   }
@@ -48,21 +49,20 @@ export class ToolboxComponent implements OnInit, OnDestroy {
       : this.resetSearch();
   }
 
-  private filterCategories(searchedValue: string): void {
-    this.categoriesToDisplay = this.toolboxService.getFilteredCategories(this.categories, searchedValue.toLowerCase());
-  }
-
   public resetSearch(): void {
-    this.categoriesToDisplay = this.getCategories();
+    this.filteredCategories = this.getCategories();
   }
 
   private getCategories(): Array<Category> {
-    return this.categories;
+    return this.allCategories;
+  }
+  private filterCategories(searchedValue: string): void {
+    this.filteredCategories = this.toolboxService.getFilteredCategories(this.allCategories, searchedValue.toLowerCase());
   }
 
   private setCategories(data: Array<Category>): void {
-    this.categories = data;
-    this.categoriesToDisplay = data;
+    this.allCategories = data;
+    this.filteredCategories = data;
   }
 
   ngOnDestroy() {
