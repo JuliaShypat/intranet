@@ -54,6 +54,7 @@ export class ToolboxComponent implements OnInit, OnDestroy {
   private getCategories(): Array<Category> {
     return this.allCategories;
   }
+
   private filterCategories(searchedValue: string): void {
     this.filteredCategories = this.toolboxService.getFilteredCategories(this.allCategories, searchedValue.toLowerCase());
   }

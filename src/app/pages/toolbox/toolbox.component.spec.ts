@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { ToolboxComponent } from './toolbox.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,10 +13,10 @@ class ConfigServiceStub {
 }
 class ToolboxServiceStub {
   getCategoriesList() {
-    return of([{} as Category]);
+    return of([{ id: 'test', name: 'Test', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }]);
   }
   getTranslatedPageData() {
-    return of([{} as Category]);
+    return of([{ id: 'test', name: 'Test', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }]);
   }
   getFilteredCategories() {
     return [{} as Category];
@@ -51,5 +51,59 @@ describe('ToolboxComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('#OnInit', () => {
+    it('should get page data ', () => {
+      const getPageDataSpy = jest.spyOn(component, 'getPageData');
+      component.ngOnInit();
+      expect(getPageDataSpy).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('should get data form service and listen to lang chnage', fakeAsync(() => {
+    const langChangeSpy = jest.spyOn(component, 'listenForLangChange');
+    const data = [{ id: 'test', name: 'Test', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }];
+    component.getPageData();
+    tick();
+    expect(langChangeSpy).toHaveBeenCalled();
+    expect(component.filteredCategories).toMatchObject(data);
+  }));
+
+  it('should get translated data form service when lang chnaged', fakeAsync(() => {
+    const data = [{ id: 'test', name: 'Translated Test', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }];
+    jest.spyOn(toolboxService, 'getTranslatedPageData').mockReturnValue(of(data));
+    component.listenForLangChange();
+    tick();
+    expect(component.filteredCategories).toMatchObject(data);
+  }));
+
+  describe('#searchInCategories', () => {
+    it('should start filtering, if value is long enought', () => {
+      const data = [{ id: 'test', name: 'Filtered Category', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }];
+      jest.spyOn(configService, 'getProperty').mockReturnValue(3);
+      jest.spyOn(toolboxService, 'getFilteredCategories').mockReturnValue(data);
+      const testText = 'Filtered';
+      component.searchInCategories(testText);
+      expect(component.filteredCategories).toMatchObject(data);
+    });
+
+    it('should reset list to original categories, if searched value is not long enought', fakeAsync(() => {
+      const originalData = [
+        { id: 'test', name: 'Translated Test', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }
+      ];
+      jest.spyOn(toolboxService, 'getTranslatedPageData').mockReturnValue(of(originalData));
+      component.listenForLangChange();
+      tick();
+      const filteredData = [
+        { id: 'test', name: 'Filtered Category', iconUrl: 'test', links: [{ id: 'link1', name: 'text', url: 'linkUrl' }] }
+      ];
+      jest.spyOn(configService, 'getProperty').mockReturnValue(3);
+      jest.spyOn(toolboxService, 'getFilteredCategories').mockReturnValue(filteredData);
+      component.searchInCategories('Filtered');
+      expect(component.filteredCategories).toMatchObject(filteredData);
+      component.searchInCategories('Fi');
+      expect(component.filteredCategories).toMatchObject(originalData);
+    }));
   });
 });
