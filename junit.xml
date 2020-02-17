@@ -1,24 +1,140 @@
-<testsuites name="jest tests" tests="4" failures="1" time="8.308">
-  <testsuite name="AppComponent" errors="0" failures="1" skipped="0" timestamp="2020-02-17T10:30:39" time="5.732" tests="4">
-    <testcase classname="AppComponent should instantiate component" name="AppComponent should instantiate component" time="0.173">
+<testsuites name="jest tests" tests="52" failures="0" time="13.313">
+  <testsuite name="NotFoundComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="6.417" tests="1">
+    <testcase classname="NotFoundComponent should create" name="NotFoundComponent should create" time="0.271">
     </testcase>
-    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+  </testsuite>
+  <testsuite name="CategoryComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="6.421" tests="1">
+    <testcase classname="CategoryComponent should create" name="CategoryComponent should create" time="0.271">
     </testcase>
-    <testcase classname="AppComponent should have as title &apos;predica-intranet&apos;" name="AppComponent should have as title &apos;predica-intranet&apos;" time="0.042">
+  </testsuite>
+  <testsuite name="CategoryListComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="6.649" tests="4">
+    <testcase classname="CategoryListComponent should create" name="CategoryListComponent should create" time="0.349">
     </testcase>
-    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.032">
-      <failure>TypeError: Cannot read property &apos;textContent&apos; of null
-    at it (C:\work\predica\predica-intranet\src\app\app.component.spec.ts:48:51)
-    at ZoneDelegate.Object.&lt;anonymous&gt;.ZoneDelegate.invoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:391:26)
-    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\proxy.js:129:39)
-    at ZoneDelegate.Object.&lt;anonymous&gt;.ZoneDelegate.invoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:390:52)
-    at Zone.Object.&lt;anonymous&gt;.Zone.run (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:150:43)
-    at Object.&lt;anonymous&gt; (C:\work\predica\predica-intranet\node_modules\jest-preset-angular\build\zone-patch\index.js:45:46)
-    at Object.asyncJestTest (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:100:37)
-    at resolve (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:43:12)
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
-    at promise.then (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:73:41)</failure>
+    <testcase classname="CategoryListComponent should emit reset event" name="CategoryListComponent should emit reset event" time="0.087">
+    </testcase>
+    <testcase classname="CategoryListComponent should check, if category is not empty (not empty)" name="CategoryListComponent should check, if category is not empty (not empty)" time="0.103">
+    </testcase>
+    <testcase classname="CategoryListComponent should check, if category is not empty (empty)" name="CategoryListComponent should check, if category is not empty (empty)" time="0.088">
+    </testcase>
+  </testsuite>
+  <testsuite name="HeaderComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="6.875" tests="5">
+    <testcase classname="HeaderComponent should create" name="HeaderComponent should create" time="0.349">
+    </testcase>
+    <testcase classname="HeaderComponent #OnInit should call function to get navigation links" name="HeaderComponent #OnInit should call function to get navigation links" time="0.112">
+    </testcase>
+    <testcase classname="HeaderComponent #OnInit should call function to get logo url" name="HeaderComponent #OnInit should call function to get logo url" time="0.119">
+    </testcase>
+    <testcase classname="HeaderComponent should get links from config service" name="HeaderComponent should get links from config service" time="0.124">
+    </testcase>
+    <testcase classname="HeaderComponent should get logo name from config service and create correct url" name="HeaderComponent should get logo name from config service and create correct url" time="0.103">
+    </testcase>
+  </testsuite>
+  <testsuite name="ToolboxComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="6.869" tests="6">
+    <testcase classname="ToolboxComponent should create" name="ToolboxComponent should create" time="0.286">
+    </testcase>
+    <testcase classname="ToolboxComponent #OnInit should get page data " name="ToolboxComponent #OnInit should get page data " time="0.07">
+    </testcase>
+    <testcase classname="ToolboxComponent should get data form service and listen to lang chnage" name="ToolboxComponent should get data form service and listen to lang chnage" time="0.113">
+    </testcase>
+    <testcase classname="ToolboxComponent should get translated data form service when lang chnaged" name="ToolboxComponent should get translated data form service when lang chnaged" time="0.068">
+    </testcase>
+    <testcase classname="ToolboxComponent #searchInCategories should start filtering, if value is long enought" name="ToolboxComponent #searchInCategories should start filtering, if value is long enought" time="0.089">
+    </testcase>
+    <testcase classname="ToolboxComponent #searchInCategories should reset list to original categories, if searched value is not long enought" name="ToolboxComponent #searchInCategories should reset list to original categories, if searched value is not long enought" time="0.101">
+    </testcase>
+  </testsuite>
+  <testsuite name="SearchComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="7.112" tests="9">
+    <testcase classname="SearchComponent should create" name="SearchComponent should create" time="0.289">
+    </testcase>
+    <testcase classname="SearchComponent #OnInit should call function to create search form" name="SearchComponent #OnInit should call function to create search form" time="0.075">
+    </testcase>
+    <testcase classname="SearchComponent #OnInit should call function to handle search" name="SearchComponent #OnInit should call function to handle search" time="0.055">
+    </testcase>
+    <testcase classname="SearchComponent should listen to search field chnages and emit event" name="SearchComponent should listen to search field chnages and emit event" time="0.065">
+    </testcase>
+    <testcase classname="SearchComponent should create search form of defined structure" name="SearchComponent should create search form of defined structure" time="0.062">
+    </testcase>
+    <testcase classname="SearchComponent should clear fields value" name="SearchComponent should clear fields value" time="0.094">
+    </testcase>
+    <testcase classname="SearchComponent isSearchCanBeCleared should check if search field can be cleared, search field has more symbols than config" name="SearchComponent isSearchCanBeCleared should check if search field can be cleared, search field has more symbols than config" time="0.06">
+    </testcase>
+    <testcase classname="SearchComponent isSearchCanBeCleared should check if search field can be cleared, search fiels has less symbols than config" name="SearchComponent isSearchCanBeCleared should check if search field can be cleared, search fiels has less symbols than config" time="0.062">
+    </testcase>
+    <testcase classname="SearchComponent should get search field from form" name="SearchComponent should get search field from form" time="0.046">
+    </testcase>
+  </testsuite>
+  <testsuite name="AnnoncementsComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="0.746" tests="1">
+    <testcase classname="AnnoncementsComponent should create" name="AnnoncementsComponent should create" time="0.075">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="1.089" tests="3">
+    <testcase classname="AppComponent should instantiate component" name="AppComponent should instantiate component" time="0.111">
+    </testcase>
+    <testcase classname="AppComponent #Default language should set default language from config" name="AppComponent #Default language should set default language from config" time="0.053">
+    </testcase>
+    <testcase classname="AppComponent #Default language should use fallback language, if config returns nothing" name="AppComponent #Default language should use fallback language, if config returns nothing" time="0.065">
+    </testcase>
+  </testsuite>
+  <testsuite name="ConfigService" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="0.969" tests="1">
+    <testcase classname="ConfigService should be created" name="ConfigService should be created" time="0.059">
+    </testcase>
+  </testsuite>
+  <testsuite name="FooterComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:02" time="7.719" tests="8">
+    <testcase classname="FooterComponent should create" name="FooterComponent should create" time="0.401">
+    </testcase>
+    <testcase classname="FooterComponent #OnInit should call function to set languages" name="FooterComponent #OnInit should call function to set languages" time="0.153">
+    </testcase>
+    <testcase classname="FooterComponent #OnInit should call function to set footer logo url" name="FooterComponent #OnInit should call function to set footer logo url" time="0.133">
+    </testcase>
+    <testcase classname="FooterComponent #changeLanguage should change language, if code provided" name="FooterComponent #changeLanguage should change language, if code provided" time="0.11">
+    </testcase>
+    <testcase classname="FooterComponent #changeLanguage should not change language, if code is not provided" name="FooterComponent #changeLanguage should not change language, if code is not provided" time="0.214">
+    </testcase>
+    <testcase classname="FooterComponent should return current year for footer" name="FooterComponent should return current year for footer" time="0.16">
+    </testcase>
+    <testcase classname="FooterComponent should set languages from config service" name="FooterComponent should set languages from config service" time="0.202">
+    </testcase>
+    <testcase classname="FooterComponent should get logo name from config service and create correct url" name="FooterComponent should get logo name from config service and create correct url" time="0.127">
+    </testcase>
+  </testsuite>
+  <testsuite name="LoaderComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="0.828" tests="1">
+    <testcase classname="LoaderComponent should create" name="LoaderComponent should create" time="0.093">
+    </testcase>
+  </testsuite>
+  <testsuite name="HomepageComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="0.912" tests="1">
+    <testcase classname="HomepageComponent should create" name="HomepageComponent should create" time="0.112">
+    </testcase>
+  </testsuite>
+  <testsuite name="AboutComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:09" time="0.879" tests="1">
+    <testcase classname="AboutComponent should create" name="AboutComponent should create" time="0.086">
+    </testcase>
+  </testsuite>
+  <testsuite name="DepartmentsComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:10" time="0.593" tests="1">
+    <testcase classname="DepartmentsComponent should create" name="DepartmentsComponent should create" time="0.071">
+    </testcase>
+  </testsuite>
+  <testsuite name="ToolboxService" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:10" time="0.934" tests="7">
+    <testcase classname="ToolboxService should be created" name="ToolboxService should be created" time="0.04">
+    </testcase>
+    <testcase classname="ToolboxService should make get call and return correct data, with provided lang param" name="ToolboxService should make get call and return correct data, with provided lang param" time="0.033">
+    </testcase>
+    <testcase classname="ToolboxService should make get call and return correct data, with default lang param" name="ToolboxService should make get call and return correct data, with default lang param" time="0.021">
+    </testcase>
+    <testcase classname="ToolboxService should call get categories, when chnage event occurs" name="ToolboxService should call get categories, when chnage event occurs" time="0.021">
+    </testcase>
+    <testcase classname="ToolboxService getFilteredCategories should return list of not mapped categories, if substring found in category name" name="ToolboxService getFilteredCategories should return list of not mapped categories, if substring found in category name" time="0.016">
+    </testcase>
+    <testcase classname="ToolboxService getFilteredCategories should return empty list, if substring not found in category name or category links" name="ToolboxService getFilteredCategories should return empty list, if substring not found in category name or category links" time="0.022">
+    </testcase>
+    <testcase classname="ToolboxService getFilteredCategories should return remmaped list, if substring found in links" name="ToolboxService getFilteredCategories should return remmaped list, if substring found in links" time="0.019">
+    </testcase>
+  </testsuite>
+  <testsuite name="SectionsComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:10" time="0.634" tests="1">
+    <testcase classname="SectionsComponent should create" name="SectionsComponent should create" time="0.065">
+    </testcase>
+  </testsuite>
+  <testsuite name="NewsComponent" errors="0" failures="0" skipped="0" timestamp="2020-02-17T21:51:10" time="0.65" tests="1">
+    <testcase classname="NewsComponent should create" name="NewsComponent should create" time="0.07">
     </testcase>
   </testsuite>
 </testsuites>
