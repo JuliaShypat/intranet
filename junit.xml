@@ -1,0 +1,24 @@
+<testsuites name="jest tests" tests="4" failures="1" time="8.308">
+  <testsuite name="AppComponent" errors="0" failures="1" skipped="0" timestamp="2020-02-17T10:30:39" time="5.732" tests="4">
+    <testcase classname="AppComponent should instantiate component" name="AppComponent should instantiate component" time="0.173">
+    </testcase>
+    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+    </testcase>
+    <testcase classname="AppComponent should have as title &apos;predica-intranet&apos;" name="AppComponent should have as title &apos;predica-intranet&apos;" time="0.042">
+    </testcase>
+    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.032">
+      <failure>TypeError: Cannot read property &apos;textContent&apos; of null
+    at it (C:\work\predica\predica-intranet\src\app\app.component.spec.ts:48:51)
+    at ZoneDelegate.Object.&lt;anonymous&gt;.ZoneDelegate.invoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:391:26)
+    at ProxyZoneSpec.Object.&lt;anonymous&gt;.ProxyZoneSpec.onInvoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\proxy.js:129:39)
+    at ZoneDelegate.Object.&lt;anonymous&gt;.ZoneDelegate.invoke (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:390:52)
+    at Zone.Object.&lt;anonymous&gt;.Zone.run (C:\work\predica\predica-intranet\node_modules\zone.js\dist\zone.js:150:43)
+    at Object.&lt;anonymous&gt; (C:\work\predica\predica-intranet\node_modules\jest-preset-angular\build\zone-patch\index.js:45:46)
+    at Object.asyncJestTest (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:100:37)
+    at resolve (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:43:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at promise.then (C:\work\predica\predica-intranet\node_modules\jest-jasmine2\build\queueRunner.js:73:41)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

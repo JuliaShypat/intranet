@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -8,9 +10,10 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotFoundComponent ]
-    })
-    .compileComponents();
+      imports: [TranslateModule.forRoot()],
+      declarations: [NotFoundComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
